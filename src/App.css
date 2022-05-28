@@ -64,25 +64,35 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 0;
 }
 
 ul > li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
   text-transform: capitalize;
   width: 400px;
   max-width: 85vw;
+  padding: 15px;
+  box-shadow: 1px 1px 5px black;
+  background-color: #282c34;
+  border-radius: 5px;
+}
+
+ul > li:hover {
+  box-shadow: 2px 2px 10px black;
 }
 
 .to-do {
-  max-width: 50%;
+  max-width: 65%;
   word-wrap: break-word;
+  text-align: left;
 }
 
 ul > li > button {
-  height: 20px;
+  height: 28px;
+  width: 70px;
 }
 
 button {

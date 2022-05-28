@@ -5,7 +5,7 @@ function ToDoList({ toDos, handleToDo }) {
         {toDos.map((elem, index) => (
           <li key={index}>
             <span className="to-do">{elem}</span>
-            <button onClick={() => handleToDo(elem)}>concluir</button>
+            <button onClick={() => handleToDo(elem)}>Concluir</button>
           </li>
         ))}
       </ul>
