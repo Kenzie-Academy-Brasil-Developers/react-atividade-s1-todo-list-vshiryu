@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "./components/Form.jsx";
 import ToDoList from "./components/ToDoList.jsx";
 
@@ -9,17 +9,14 @@ function App() {
   );
   function addToDo(newToDo) {
     setToDos([...toDos, newToDo]);
-    localStorage.setItem("toDo", JSON.stringify([...toDos, newToDo]));
   }
   function handleToDo(item) {
     setToDos(toDos.filter((elem) => elem !== item));
-    localStorage.setItem(
-      "toDo",
-      JSON.stringify(
-        JSON.parse(localStorage.toDo).filter((elem) => elem !== item)
-      )
-    );
   }
+
+  useEffect(() => {
+    localStorage.setItem("toDo", JSON.stringify(toDos));
+  }, [toDos]);
 
   return (
     <div className="App">
